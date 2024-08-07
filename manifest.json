@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Youtube Shorts Auto Next",
+  "version": "1.0",
+  "icons": {
+    "128": "logo.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/shorts/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "action": {
+    "default_title": "YouTube Shorts Auto Next",
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}
